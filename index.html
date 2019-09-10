@@ -1,1 +1,31 @@
-<h1>PWA!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+        <script src="qrcode.js"></script>
+
+
+</head>
+<body>
+
+<img src="img.jpg" alt="">
+</body>
+
+
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+            navigator.serviceWorker.register('sw2.js').then(function (registration) {
+                // Registration was successful
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, function (err) {
+                // registration failed :(
+                console.log('ServiceWorker registration failed: ', err);
+            });
+        });
+    }
+</script>
+
+</html>
